@@ -1429,7 +1429,7 @@ exports.storedtoken = function (){
     sys.logs.error(JSON.stringify(config.get()));
     sys.logs.error(JSON.stringify(config.get("oauth")));
     sys.logs.error(JSON.stringify(config.get("oauth").id));
-    return sys.storage.get(config.get("oauth").id +' - refresh_token', response.refresh_token);
+    return sys.storage.get(config.get("oauth").id +' - refresh_token');
 }
 
 function handleRequestWithRetry(requestFn, options, callbackData, callbacks) {
