@@ -1425,6 +1425,13 @@ exports.testFunction = function () {
     return dependencies.oauth.functions.testFunction();
 }
 
+exports.storedtoken = function (){
+    sys.logs.error(JSON.stringify(config.get()));
+    sys.logs.error(JSON.stringify(config.get("oauth")));
+    sys.logs.error(JSON.stringify(config.get("oauth").id));
+    return sys.storage.get(config.get("oauth").id +' - refresh_token', response.refresh_token);
+}
+
 function handleRequestWithRetry(requestFn, options, callbackData, callbacks) {
     try {
         return requestFn(options, callbackData, callbacks);
