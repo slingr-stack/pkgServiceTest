@@ -1426,11 +1426,14 @@ exports.testFunction = function () {
 }
 
 exports.storedtoken = function (){
+    // testing new version
+    sys.logs.error('testing new version');
     sys.logs.error(JSON.stringify(config.get()));
     sys.logs.error(JSON.stringify(config.get("oauth")));
     sys.logs.error(JSON.stringify(config.get("oauth").id));
     return sys.storage.get(config.get("oauth").id +' - refresh_token');
 }
+
 
 function handleRequestWithRetry(requestFn, options, callbackData, callbacks) {
     try {
